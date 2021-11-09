@@ -5,7 +5,7 @@ branding:
   icon: 'check-circle'
   color: 'purple'
 inputs:
-  who:  # id of input
+  target_directory:
     description: 'Who to greet at start up.'
     required: true
     default: 'World'
@@ -13,4 +13,4 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.who }}
+    - ${{ inputs.target_directory }}

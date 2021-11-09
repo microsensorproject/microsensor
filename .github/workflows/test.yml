@@ -11,7 +11,7 @@ jobs:
         id: hello
         uses: ./
         with:
-          who: 'James Bond'
+          target_directory: '/tmp/msanose'
       - name: List WORKDIR content
         run: |
           ls -l
