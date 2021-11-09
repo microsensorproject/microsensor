@@ -1,0 +1,16 @@
+name: "Microservices Nose (e.g., MSANose) Action"
+description: "Run Java MSANose in a command line context via GitHub Actions."
+author: "Edson A. Soares"
+branding:
+  icon: 'check-circle'
+  color: 'purple'
+inputs:
+  who:  # id of input
+    description: 'Who to greet at start up.'
+    required: true
+    default: 'World'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who }}
