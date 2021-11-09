@@ -3,7 +3,7 @@ on: [push]
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to perform basic checks
     steps:
       - name: Run docker action and set output for testing
         uses: actions/checkout@v2
