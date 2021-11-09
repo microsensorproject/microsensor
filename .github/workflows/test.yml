@@ -10,5 +10,6 @@ jobs:
         uses: actions/msanose_action@v1
         with:
           who: 'James Bond'
+      - name: List WORKDIR content
         run: |
           ls -l
