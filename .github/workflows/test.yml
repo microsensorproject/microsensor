@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action
         id: hello
-        uses: edson-a-soares/msanose_action
+        uses: ./
         with:
           who: 'James Bond'
       - name: List WORKDIR content
