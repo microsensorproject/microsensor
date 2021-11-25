@@ -29,11 +29,11 @@ jobs:
           repository: FudanSELab/train-ticket
           path: train-ticket
 
-      - name: Checkout sitewhere/sitewhere
-        uses: actions/checkout@v2
-        with:
-          repository: sitewhere/sitewhere
-          path: sitewhere
+#      - name: Checkout sitewhere/sitewhere
+#        uses: actions/checkout@v2
+#        with:
+#          repository: sitewhere/sitewhere
+#          path: sitewhere
 
       # Run the analysis on the specified directory
       - name: Smells analysis test
