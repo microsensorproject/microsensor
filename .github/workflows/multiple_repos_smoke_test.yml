@@ -8,14 +8,14 @@ jobs:
       - name: Run docker action and set output for testing
         uses: actions/checkout@v2
         with:
-          path: msanose/itself
+          path: itself
 
       # Run the analysis on the specified directory
       - name: Smells analysis test
         id: analysis
         uses: edson-a-soares/msanose_action@main
         with:
-          target_directory: $GITHUB_WORKSPACE/msanose
+          target_directory: '.'
 
       # Collect the analysis output
       - name: Get the analysis output (e.g., report)
