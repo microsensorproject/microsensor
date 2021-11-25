@@ -5,10 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to perform multiple repository checks
     steps:
-      - name: Run docker action and set output for testing
+      - name: Checkout the action source code itself
         uses: actions/checkout@v2
         with:
           path: itself
+
+      - name: Checkout Netflix/genie
+        uses: actions/checkout@v2
+        with:
+          repository: Netflix/genie
+          path: genie
 
       # Run the analysis on the specified directory
       - name: Smells analysis test
