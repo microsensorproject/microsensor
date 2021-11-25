@@ -15,7 +15,7 @@ jobs:
         id: analysis
         uses: edson-a-soares/msanose_action@main
         with:
-          target_directory: $GITHUB_WORKSPACE
+          target_directory: $GITHUB_WORKSPACE/msanose
 
       # Collect the analysis output
       - name: Get the analysis output (e.g., report)
