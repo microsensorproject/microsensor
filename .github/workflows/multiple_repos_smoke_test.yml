@@ -16,6 +16,12 @@ jobs:
           repository: Netflix/genie
           path: genie
 
+      - name: Checkout apolloconfig/apollo
+        uses: actions/checkout@v2
+        with:
+          repository: apolloconfig/apollo
+          path: apollo
+
       # Run the analysis on the specified directory
       - name: Smells analysis test
         id: analysis
