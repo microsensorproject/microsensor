@@ -22,6 +22,12 @@ jobs:
           repository: apolloconfig/apollo
           path: apollo
 
+      - name: Checkout FudanSELab/train-ticket
+        uses: actions/checkout@v2
+        with:
+          repository: FudanSELab/train-ticket
+          path: train-ticket
+
       # Run the analysis on the specified directory
       - name: Smells analysis test
         id: analysis
