@@ -24,4 +24,4 @@ runs:
         docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f ${{ inputs.action_absolute_path }}/MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
-        docker run -it --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
+        docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
