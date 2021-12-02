@@ -47,10 +47,12 @@ jobs:
         run: echo "${{ steps.analysis.outputs.report }}"
       - name: List WORKDIR content
         run: |
+          pwd
           ls -l
+          ls -l itself
 
-      - name: Deploy Report Visualization
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages      # The branch the action should deploy to.
-          folder: ./dist        # The folder the action should deploy.
+#      - name: Deploy Report Visualization
+#        uses: JamesIves/github-pages-deploy-action@4.1.7
+#        with:
+#          branch: gh-pages      # The branch the action should deploy to.
+#          folder: ./dist        # The folder the action should deploy.
