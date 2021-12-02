@@ -8,7 +8,7 @@ inputs:
   analysis_directory:
     description: 'The directory with the microservices to do analysis.'
     required: true
-    default: '.'
+    default: $GITHUB_WORKSPACE
   action_absolute_path:
     description: 'In case you change the action path during checkout.'
     required: true
