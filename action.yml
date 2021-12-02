@@ -12,11 +12,15 @@ inputs:
     description: 'In case you change the action path during checkout.'
     required: true
     default: '.'
+outputs:
+  json_report:
+    description: "The raw JSON analysis report."
+    value: ${{ steps.analysis.outputs.json_report }}
 runs:
   using: "composite"
   steps:
     - name:
-      id: something
+      id: analysis
       shell: bash
       run: |
         echo "BUILD MSA Nose docker image. | ${{ inputs.action_absolute_path }}/MSANose.Dockerfile"
