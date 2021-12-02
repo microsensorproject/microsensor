@@ -10,7 +10,7 @@ jobs:
       # Run the analysis on the specified directory
       - name: Smells analysis test
         id: analysis
-        uses: edson-a-soares/msanose_action@main
+        uses: edson-a-soares/msanose_action@development
         with:
           target_directory: '.'
       # Collect the analysis output
