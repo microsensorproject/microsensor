@@ -59,6 +59,9 @@ jobs:
           echo "ls -l $GITHUB_ACTION_PATH"
           ls -l $GITHUB_ACTION_PATH
 
+          echo "ls -l $GITHUB_WORKSPACE"
+          ls -l $GITHUB_WORKSPACE
+
 #      - name: Deploy Report Visualization
 #        uses: peaceiris/actions-gh-pages@v3
 #        with:
