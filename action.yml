@@ -16,8 +16,8 @@ runs:
       id: something
       shell: bash
       run: |
-        echo "Build MSA Nose docker image. | $GITHUB_ACTION_PATH/MSANose.Dockerfile"
-        docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f "$GITHUB_ACTION_PATH/MSANose.Dockerfile"
+        echo "Build MSA Nose docker image. | $GITHUB_WORKSPACE/MSANose.Dockerfile"
+        docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f $GITHUB_WORKSPACE/MSANose.Dockerfile
 
 
 
