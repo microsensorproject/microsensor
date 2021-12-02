@@ -22,4 +22,5 @@ runs:
       run: |
         echo "Build MSA Nose docker image. | ${{ inputs.action_path }}/MSANose.Dockerfile"
         pwd
-        docker build -t msanose -f MSANose.Dockerfile
+        ls -l
+        
