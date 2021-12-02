@@ -21,4 +21,4 @@ runs:
       shell: bash
       run: |
         echo "Build MSA Nose docker image. | ${{ inputs.action_path }}/MSANose.Dockerfile"
-        docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f "${{ inputs.action_path }}/MSANose.Dockerfile"
+        docker build -t "$GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER" -f "${{ inputs.action_path }}/MSANose.Dockerfile"
