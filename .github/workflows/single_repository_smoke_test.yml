@@ -28,7 +28,6 @@ jobs:
         uses: edson-a-soares/msanose_action@development
         with:
           analysis_directory: '.'
-          action_path: "$GITHUB_WORKSPACE"
 
       # Collect the analysis output
       - name: Get the analysis output (e.g., report)

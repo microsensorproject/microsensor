@@ -58,7 +58,7 @@ jobs:
 #        uses: edson-a-soares/msanose_action@development
 #        with:
 #          analysis_directory: '.'
-#          action_directory: 'itself'
+#          action_absolute_path: 'itself'
 
       # Collect the analysis output
       - name: Get the analysis output (e.g., report)
