@@ -60,7 +60,7 @@ jobs:
 #        id: analysis
 #        uses: edson-a-soares/msanose_action@development
 #        with:
-#          target_directory: '.'
+#          analysis_directory: '.'
 
 #      - name: Deploy Report Visualization
 #        uses: peaceiris/actions-gh-pages@v3
