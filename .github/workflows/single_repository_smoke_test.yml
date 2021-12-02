@@ -7,15 +7,28 @@ jobs:
     steps:
       - name: Run docker action and set output for testing
         uses: actions/checkout@v2
-      # Run the analysis on the specified directory
-      - name: Smells analysis test
-        id: analysis
-        uses: edson-a-soares/msanose_action@development
-        with:
-          analysis_directory: '.'
-      # Collect the analysis output
-      - name: Get the analysis output (e.g., report)
-        run: echo "${{ steps.analysis.outputs.report }}"
+
       - name: List WORKDIR content
         run: |
+          echo "pwd"
+          pwd
+
+          echo "ls -l"
           ls -l
+
+          echo "ls -l $GITHUB_ACTION_PATH"
+          ls -l $GITHUB_ACTION_PATH
+
+          echo "ls -l $GITHUB_WORKSPACE"
+          ls -l $GITHUB_WORKSPACE
+
+#      # Run the analysis on the specified directory
+#      - name: Smells analysis test
+#        id: analysis
+#        uses: edson-a-soares/msanose_action@development
+#        with:
+#          analysis_directory: '.'
+#
+#      # Collect the analysis output
+#      - name: Get the analysis output (e.g., report)
+#        run: echo "${{ steps.analysis.outputs.report }}"

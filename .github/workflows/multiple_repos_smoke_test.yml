@@ -35,9 +35,6 @@ jobs:
 #          repository: sitewhere/sitewhere
 #          path: sitewhere
 
-      # Collect the analysis output
-      - name: Get the analysis output (e.g., report)
-        run: echo "${{ steps.analysis.outputs.report }}"
       - name: List WORKDIR content
         run: |
           echo "pwd"
@@ -61,6 +58,11 @@ jobs:
 #        uses: edson-a-soares/msanose_action@development
 #        with:
 #          analysis_directory: '.'
+#          action_directory: 'itself'
+
+      # Collect the analysis output
+      - name: Get the analysis output (e.g., report)
+        run: echo "${{ steps.analysis.outputs.report }}"
 
 #      - name: Deploy Report Visualization
 #        uses: peaceiris/actions-gh-pages@v3
