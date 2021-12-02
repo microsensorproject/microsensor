@@ -47,13 +47,21 @@ jobs:
         run: echo "${{ steps.analysis.outputs.report }}"
       - name: List WORKDIR content
         run: |
+          echo "pwd"
           pwd
+
+          echo "ls -l"
           ls -l
+
+          echo "ls -l itself"
           ls -l itself
 
-      - name: Deploy Report Visualization
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          # branch: gh-pages                            # The branch the action should deploy to.
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./itself/dist/index.html         # The folder the action should deploy.
+          echo "ls -l $GITHUB_ACTION_PATH"
+          ls -l $GITHUB_ACTION_PATH
+
+#      - name: Deploy Report Visualization
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          # branch: gh-pages                            # The branch the action should deploy to.
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./itself/dist/index.html         # The folder the action should deploy.

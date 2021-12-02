@@ -10,7 +10,14 @@ inputs:
     required: true
     default: '.'
 runs:
-  using: "docker"
-  image: "Dockerfile"
-  args:
-    - ${{ inputs.target_directory }}
+  using: "composite"
+  steps:
+    - name:
+      id: something
+      shell: bash
+      run: |
+        echo "Build MSA Nose docker image. | $GITHUB_ACTION_PATH/MSANose.Dockerfile"
+        docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f "$GITHUB_ACTION_PATH/MSANose.Dockerfile"
+
+
+

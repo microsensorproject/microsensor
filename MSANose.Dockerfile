@@ -22,8 +22,8 @@ RUN apt-get update -qq \
 
 COPY --from=MAVEN_BUILD msa-nose/target/msa-nose-0.0.1.jar /usr/local/msa-nose/
 
-COPY src/scripts/start_msanose.sh /usr/local/msa-nose/start_msanose.sh
+COPY src/scripts/msa-nose/start_msanose.sh /usr/local/msa-nose/start_msanose.sh
 RUN chmod u+x /usr/local/msa-nose/start_msanose.sh
 
-COPY src/scripts/entrypoint.sh /entrypoint.sh
+COPY src/scripts/msa-nose/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
