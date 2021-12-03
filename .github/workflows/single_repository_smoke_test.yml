@@ -30,5 +30,8 @@ jobs:
           analysis_directory: $GITHUB_WORKSPACE
 
       # Collect the analysis output
-      - name: Get the analysis output (e.g., report)
+      - name: Get the analysis raw output (e.g., report)
+        run: echo "${{ steps.analysis.outputs.json_report }}"
+
+      - name: Get the analysis raw output (e.g., report)
         run: echo "${{ steps.analysis.outputs.json_report }}"

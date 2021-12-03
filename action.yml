@@ -4,6 +4,7 @@ author: "Edson A. Soares"
 branding:
   icon: 'check-circle'
   color: 'purple'
+
 inputs:
   analysis_directory:
     description: 'The directory with the microservices to do analysis.'
@@ -12,19 +13,38 @@ inputs:
     description: 'In case you change the action path during checkout.'
     required: true
     default: '.'
+
 outputs:
   json_report:
     description: "The raw JSON analysis report."
     value: ${{ steps.analysis.outputs.json_report }}
+  html_report:
+    description: "The HTML analysis report."
+    value: ${{ steps.report.outputs.html_report }}
+
 runs:
   using: "composite"
   steps:
-    - name:
+    - name: It runs the analysis in the ${{ inputs.analysis_directory }}
       id: analysis
       shell: bash
       run: |
         echo "BUILD MSA Nose docker image. | ${{ inputs.action_absolute_path }}/MSANose.Dockerfile"
-        docker build -t $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER -f ${{ inputs.action_absolute_path }}/MSANose.Dockerfile .
+        docker build -t msanose:$GITHUB_RUN_NUMBER -f ${{ inputs.action_absolute_path }}/MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
-        docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} $GITHUB_REPOSITORY:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
+        docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
+
+    - name: It builds the HTLM report for the analysis.
+      id: report
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+      run: |
+        cd ${{ inputs.action_absolute_path }}/src/scripts/renderer/js
+
+        echo "Install HTML Report scripts dependencies."
+        npm install
+
+        echo "BUILD MSA Nose HTML report."
+        node app.js
