@@ -35,11 +35,14 @@ runs:
         echo "RUN MSA Nose docker container for the analysis."
         docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
 
-    - name: It builds the HTLM report for the analysis.
-      id: report
+    - name: Set up NodeJS.
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+
+    - name: It builds the HTLM report for the analysis.
+      id: report
+      shell: bash
       run: |
         cd ${{ inputs.action_absolute_path }}/src/scripts/renderer/js
 
