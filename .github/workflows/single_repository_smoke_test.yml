@@ -33,5 +33,5 @@ jobs:
       - name: Get the analysis raw json output (e.g., report)
         run: echo "${{ steps.analysis.outputs.json_report }}"
 
-      - name: Get the html output
+      - name: Get the html output report
         run: echo "${{ steps.analysis.outputs.html_report }}"

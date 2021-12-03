@@ -43,8 +43,12 @@ runs:
     - name: It builds the HTLM report for the analysis.
       id: report
       shell: bash
+      env:
+        INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
       run: |
         cd ${{ inputs.action_absolute_path }}/src/scripts/renderer/js
+
+        echo "$INPUT_JSON_REPORT"
 
         echo "Install HTML Report scripts dependencies."
         npm install
