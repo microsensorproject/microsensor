@@ -53,3 +53,9 @@ runs:
 
         echo "BUILD MSA Nose HTML report."
         node app.js
+
+    - name: HTML Report Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages
+        folder: dist
