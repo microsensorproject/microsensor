@@ -2,7 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+    <title>MSANose Report</title>
 </head>
-<body></body>
+<body>
+    <main>
+        <p>API Gateway: {{apigateway}}</p>
+        <div class="card-grid">
+            {{#each times}}
+            <div class="card">
+                <h2>{{ @key }}: {{ this }}</h2>
+            </div>
+            {{/each}}
+        </div>
+    </main>
+</body>
 </html>
