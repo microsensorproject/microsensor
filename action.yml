@@ -48,8 +48,6 @@ runs:
       run: |
         cd ${{ inputs.action_absolute_path }}/src/scripts/renderer/js
 
-        echo "$INPUT_JSON_REPORT"
-
         echo "Install HTML Report scripts dependencies."
         npm install
 

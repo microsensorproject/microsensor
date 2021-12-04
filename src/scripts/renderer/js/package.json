@@ -1,5 +1,6 @@
 {
   "name": "msanose-action-renderer",
+  "private": "true",
   "version": "1.0.0",
   "description": "",
   "author": "Edson A. Soares <edson.araujo.soares@gmail.com>",
