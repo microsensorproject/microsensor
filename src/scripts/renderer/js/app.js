@@ -17,6 +17,11 @@ async function main() {
     const template = handlebars.compile(templateSource);
     const report = template(jsonReportInput)
     // console.log(report)
+
+    fs.writeFile(__dirname + "/../../../../dist/index.html", report, function (err) {
+        if (err) throw err;
+    });
+
     core.setOutput("html_report", report)
 }
 
