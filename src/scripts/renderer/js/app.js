@@ -1,8 +1,24 @@
 const fs = require("fs")
+const path = require('path');
 const core = require('@actions/core')
 const handlebars = require('handlebars')
 
-const templateSource = fs.readFileSync(__dirname + "/../templates/report.html", 'utf8')
+function render(dataInput, reportOutputDir) {
+    const templatesDir = path.join(__dirname, '..', 'templates');
+    const templatesNames = fs.readdirSync(templatesDir);
+
+    templatesNames.forEach(function (templateName) {
+        const templatePath = path.join(templatesDir, templateName);
+        const templateSource = fs.readFileSync(templatePath, 'utf8')
+        const template = handlebars.compile(templateSource);
+
+        const reportPage = template(dataInput)
+        const reportOutputPath = path.join(reportOutputDir, templateName);
+        fs.writeFile(reportOutputPath, reportPage, function (err) {
+            if (err) throw err;
+        });
+    });
+}
 
 async function main() {
     let INPUT_JSON_REPORT = core.getInput('INPUT_JSON_REPORT') || process.env.INPUT_JSON_REPORT
@@ -14,15 +30,12 @@ async function main() {
     const jsonReportInput = JSON.parse(INPUT_JSON_REPORT);
     // console.log(INPUT_JSON_REPORT)
 
-    const template = handlebars.compile(templateSource);
-    const report = template(jsonReportInput)
-    // console.log(report)
+    const partialsDir = path.join(__dirname, '..', 'partials');
+    handlebars.registerPartial('footer', fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
+    handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    fs.writeFile(__dirname + "/../../../../dist/index.html", report, function (err) {
-        if (err) throw err;
-    });
-
-    core.setOutput("html_report", report)
+    const distributionDir = path.join(__dirname, '../../../../', 'dist');
+    render(jsonReportInput, distributionDir);
 }
 
 
