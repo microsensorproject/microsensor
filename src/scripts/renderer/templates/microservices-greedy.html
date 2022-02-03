@@ -27,42 +27,45 @@
     </nav>
 
 
-    <div class="container my-4">
-
-        <h2 class="px-4 text-gray-800">Microservices Greedy</h2>
+    <div class="p-5 mb-5">
+        <div class="bd-intro">
+            <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                <a class="btn btn-sm btn-bd-light mb-2 mb-md-0" href="https://github.com/edson-a-soares/msanose-action" title="View and edit this file on GitHub" target="_blank" rel="noopener">View More on GitHub</a>
+                <h2 class="bd-title" id="content">Microservice Greedy (MG)</h2>
+            </div>
+            <p class="bd-lead">This occurs when microservices are created for every new feature, and, oftentimes, these new modules are too small and do not serve many purposes. This increases complexity and the overhead of the system. Smaller features should be wrapped into larger microservices if possible.</p>
+        </div>
         <hr/>
 
-        <div class="p-5 mb-5">
-            <section>
-                <div class="row">
+        <section>
+            <div class="row">
 
-                    {{#each microservicesGreedyContext.microserviceMetrics}}
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="text-uppercase small mb-2">
-                                    <strong>Path</strong> {{ @key }}
-                                </p>
-                                <p class="text-lowercase text-muted small mb-2">{{ this.path }}</p>
+                {{#each microservicesGreedyContext.microserviceMetrics}}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-uppercase small mb-2">
+                                <strong>Path</strong> {{ @key }}
+                            </p>
+                            <p class="text-lowercase text-muted small mb-2">{{ this.path }}</p>
 
-                                <hr />
-                                <p class="small mb-2">Static File Count</p>
-                                <h5 class="mb-0">
-                                    <small class="text-danger ms-2">{{ this.staticFileCount }}</small>
-                                </h5>
+                            <hr />
+                            <p class="small mb-2">Static File Count</p>
+                            <h5 class="mb-0">
+                                <small class="text-danger ms-2">{{ this.staticFileCount }}</small>
+                            </h5>
 
-                                <p class="small mb-2">Entity File Count</p>
-                                <h5 class="mb-0">
-                                    <small class="text-success ms-2">{{ this.entityFileCount }}</small>
-                                </h5>
-                            </div>
+                            <p class="small mb-2">Entity File Count</p>
+                            <h5 class="mb-0">
+                                <small class="text-success ms-2">{{ this.entityFileCount }}</small>
+                            </h5>
                         </div>
                     </div>
-                    {{/each}}
-
                 </div>
-            </section>
-        </div>
+                {{/each}}
+
+            </div>
+        </section>
     </div>
 
     <div class="px-4">

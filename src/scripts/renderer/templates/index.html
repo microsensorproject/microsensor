@@ -28,9 +28,11 @@
 
 
     <div class="container my-4">
-
-        <h2 class="px-4 text-gray-800">Overview</h1>
-        <hr/>
+        <div class="bd-intro">
+            <div class="d-md-flex">
+                <h2 class="bd-title" id="content">Overview</h2>
+            </div>
+        </div>
 
         <div class="border p-5 mb-5">
             <section>
@@ -44,7 +46,11 @@
                                 </p>
                                 <hr />
                                 <h5 class="mb-0">
-                                    <strong class="text-danger ms-2">{{ this }}</strong>
+                                    {{#if this}}
+                                        <strong class="text-danger ms-2">{{ this }}</strong>
+                                    {{else}}
+                                        <strong class="text-success ms-2">{{ this }}</strong>
+                                    {{/if}}
                                 </h5>
                             </div>
                         </div>
