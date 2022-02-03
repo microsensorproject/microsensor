@@ -28,11 +28,45 @@
 
 
 
-        <div class="border p-5 mb-5">
+        <div class="p-5 mb-5">
+
+            <h2 class="px-4 text-gray-800">Shared Libraries</h2>
+            <hr/>
+
             <section>
                 <div class="row">
 
-                    <div class="card" style="width: 18rem">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Library</th>
+                            <th>Dependencies</th>
+                            <th>Microservices</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {{#each sharedLibraryContext.sharedLibraries}}
+                        <tr>
+                            <td>{{ @key }}</td>
+                            <td>{{ this.count }}</td>
+                            <td>
+                                <!--a class="btn btn-primary" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    See
+                                </a>
+                                <div class="collapse" id="{{key}}">
+                                    <div class="card card-body">
+                                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                </div-->
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                        </tbody>
+                    </table>
+
+                    <!--div class="card" style="width: 18rem">
                         <div class="card-body">
                             <h5 class="card-title">Libraries</h5>
                             <p class="card-text">Shared Libraries.</p>
@@ -43,7 +77,7 @@
                             <li class="list-group-item">{{ @key }}</li>
                         </ul>
                         {{/each}}
-                    </div>
+                    </div-->
 
                 </div>
             </section>

@@ -27,43 +27,31 @@
     </nav>
 
 
-    <div class="container my-4">
 
-        <h2 class="px-4 text-gray-800">Inappropriate Service Intimacy (ISI)</h2>
+    <div class="p-5 mb-5">
+
+        <h2 class="px-4 text-gray-800">Enterprise Message Bus Usage</h2>
         <hr/>
 
-        <div class="p-5 mb-5">
-            <section>
-                <div class="row">
+        <section>
+            <div class="row">
 
-                    {{#each inappropriateServiceIntimacyContext.sharedIntimacies}}
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="text-uppercase small mb-2">
-                                    <strong>Path</strong> {{ @key }}
-                                </p>
-                                <p class="text-lowercase text-muted small mb-2">{{ this.path }}</p>
-
-                                <hr />
-                                <p class="small mb-2">Field Name</p>
-                                <h5 class="mb-0">
-                                    <small class="text-danger ms-2">{{ this }}</small>
-                                </h5>
-
-                                <p class="small mb-2">Field Name</p>
-                                <h5 class="mb-0">
-                                    <small class="text-success ms-2">{{ this }}</small>
-                                </h5>
-                            </div>
-                        </div>
+                <div class="card" style="width: 18rem">
+                    <div class="card-body">
+                        <h5 class="card-title">ESB Candidates</h5>
                     </div>
-                    {{/each}}
 
+                    {{#each esbContext.candidateESBs}}
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ @key }}</li>
+                    </ul>
+                    {{/each}}
                 </div>
-            </section>
-        </div>
+
+            </div>
+        </section>
     </div>
+
 
     <div class="px-4">
         {{> footer}}
