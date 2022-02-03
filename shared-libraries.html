@@ -40,9 +40,9 @@
                             <li><a class="dropdown-item" href="too-many-standards.html">Too Many Standards</a></li>
                             <li><a class="dropdown-item" href="shared-persistence.html">Shared Persistence</a></li>
                             <li><a class="dropdown-item" href="microservices-greedy.html">Microservice Greedy</a></li>
-                            <li><a class="dropdown-item" href="inappropriate-service-intimacy.html">Inappropriate Service Intimacy</a></li>
+                            <li><a class="dropdown-item" href="inappropriate-service-intimacy.html">Inappropriate Service Intimacy (ISI)</a></li>
                             <li><a class="dropdown-item" href="hardcoded-endpoints.html">Hardcoded Endpoints</a></li>
-                            <li><a class="dropdown-item" href="esb.html">Enterprise Message Bus Usage</a></li>
+                            <li><a class="dropdown-item" href="esb.html">Enterprise Service Bus Usage (ESB)</a></li>
                             <li><a class="dropdown-item" href="wrong-cuts.html">Wrong Cuts</a></li>
                         </ul>
                     </li>
@@ -52,40 +52,44 @@
     </nav>
 
 
-
-        <div class="p-5 mb-5">
-
-            <h2 class="px-4 text-gray-800">Shared Libraries</h2>
-            <hr/>
-
-            <section>
-                <div class="row">
-
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Library</th>
-                            <th>Dependencies</th>
-                            <th>Microservices</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-
-                        </tbody>
-                    </table>
-
-                    <!--div class="card" style="width: 18rem">
-                        <div class="card-body">
-                            <h5 class="card-title">Libraries</h5>
-                            <p class="card-text">Shared Libraries.</p>
-                        </div>
-
-                    </div-->
-
-                </div>
-            </section>
+    <div class="p-5 mb-5">
+        <div class="bd-intro">
+            <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                <a class="btn btn-sm btn-bd-light mb-2 mb-md-0" href="https://github.com/edson-a-soares/msanose-action" title="View and edit this file on GitHub" target="_blank" rel="noopener">View More on GitHub</a>
+                <h2 class="bd-title" id="content">Shared Libraries (SL)</h2>
+            </div>
+            <p class="bd-lead">If microservices are coupled with a common library, that library should be refactored into a separate module. This reduces the fragility of the application by migrating the shared functionality behind a common, unchanging interface. This will make the system resistant to ripples from changes within the library.</p>
         </div>
+        <hr/>
+
+        <section>
+            <div class="row">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Library</th>
+                        <th>Dependencies</th>
+                        <th>Microservices</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    </tbody>
+                </table>
+
+                <!--div class="card" style="width: 18rem">
+                    <div class="card-body">
+                        <h5 class="card-title">Libraries</h5>
+                        <p class="card-text">Shared Libraries.</p>
+                    </div>
+
+                </div-->
+
+            </div>
+        </section>
+    </div>
 
 
     <div class="px-4">
