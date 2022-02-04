@@ -2,11 +2,13 @@ const fs = require("fs")
 const path = require('path');
 const core = require('@actions/core')
 const handlebars = require('handlebars')
+const helpers = require('handlebars-helpers')();
 
 function render(dataInput, reportOutputDir) {
     const templatesDir = path.join(__dirname, '..', 'templates');
     const templatesNames = fs.readdirSync(templatesDir);
 
+    handlebars.registerHelper(helpers);
     templatesNames.forEach(function (templateName) {
         const templatePath = path.join(templatesDir, templateName);
         const templateSource = fs.readFileSync(templatePath, 'utf8')

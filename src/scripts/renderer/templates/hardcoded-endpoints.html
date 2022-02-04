@@ -60,7 +60,11 @@
                             </h5>
                             <hr />
                             <h5 class="mb-0">
+                                {{#if hardCodedEndpointsContext.totalHardcodedPorts}}
                                 <strong class="text-danger ms-2">{{ hardCodedEndpointsContext.totalHardcodedPorts }}</strong>
+                                {{else}}
+                                <strong class="text-success ms-2">{{ hardCodedEndpointsContext.totalHardcodedPorts }}</strong>
+                                {{/if}}
                             </h5>
                         </div>
                     </div>
@@ -74,7 +78,11 @@
                             </h5>
                             <hr />
                             <h5 class="mb-0">
-                                <strong class="text-danger ms-2">{{ hardCodedEndpointsContext.totalHardcodedIP }}</strong>
+                                {{#if hardCodedEndpointsContext.totalHardcodedIP}}
+                                    <strong class="text-danger ms-2">{{ hardCodedEndpointsContext.totalHardcodedIP }}</strong>
+                                {{else}}
+                                    <strong class="text-success ms-2">{{ hardCodedEndpointsContext.totalHardcodedIP }}</strong>
+                                {{/if}}
                             </h5>
                         </div>
                     </div>

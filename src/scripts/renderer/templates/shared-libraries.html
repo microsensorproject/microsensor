@@ -40,7 +40,7 @@
         <section>
             <div class="row">
 
-                <table class="table table-striped">
+                <table class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th>Library</th>
@@ -55,33 +55,44 @@
                         <td>{{ @key }}</td>
                         <td>{{ this.count }}</td>
                         <td>
-                            <!--a class="btn btn-primary" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{dashcase this.library}}">
                                 See
-                            </a>
-                            <div class="collapse" id="{{key}}">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                            </button>
+
+                            <div class="modal fade" id={{dashcase this.library}} tabindex="-1" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="gridModalLabel">Dependents of {{this.library}}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid bd-example-row">
+                                                <div class="row">
+
+                                                    <ol class="list-group list-group-flush list-group-numbered">
+                                                        {{#each this.microservices}}
+                                                        <li class="list-group-item list-group-item-action">{{ this }}</li>
+                                                        {{/each}}
+                                                    </ol>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div-->
+                            </div>
+
                         </td>
                     </tr>
                     {{/each}}
 
                     </tbody>
                 </table>
-
-                <!--div class="card" style="width: 18rem">
-                    <div class="card-body">
-                        <h5 class="card-title">Libraries</h5>
-                        <p class="card-text">Shared Libraries.</p>
-                    </div>
-
-                    {{#each sharedLibraryContext.sharedLibraries}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{ @key }}</li>
-                    </ul>
-                    {{/each}}
-                </div-->
 
             </div>
         </section>
