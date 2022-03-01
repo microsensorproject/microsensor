@@ -38,7 +38,7 @@ async function main() {
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
     console.log("Generating report at.: " + OUTPUT_HTML_REPORT_DIRECTORY)
-    const localDistributionDir = path.join(__dirname, '../../../../', 'dist');
+    const localDistributionDir = path.join(__dirname, '../../../../', OUTPUT_HTML_REPORT_DIRECTORY);
     render(jsonReportInput, OUTPUT_HTML_REPORT_DIRECTORY || localDistributionDir);
 }
 
