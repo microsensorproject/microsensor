@@ -53,7 +53,8 @@ runs:
 
     - name: HTML Report Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.7
-      working-directory: $GITHUB_ACTION_PATH
       with:
+        workspace: $GITHUB_ACTION_PATH
         branch: gh-pages
         folder: dist
+
