@@ -12,7 +12,7 @@ inputs:
   output_report_directory:
     description: 'The directory where the report will be created.'
     required: true
-    default: $GITHUB_WORKSPACE/docs/report
+    default: docs/report
 
 outputs:
   json_report:
