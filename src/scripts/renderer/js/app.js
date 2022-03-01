@@ -24,6 +24,7 @@ function render(dataInput, reportOutputDir) {
 
 async function main() {
     let INPUT_JSON_REPORT = core.getInput('INPUT_JSON_REPORT') || process.env.INPUT_JSON_REPORT
+    let OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY') || process.env.OUTPUT_HTML_REPORT_DIRECTORY
     if ( typeof INPUT_JSON_REPORT !== 'string' ) {
         throw new Error('Invalid INPUT_JSON_REPORT: did you forget to set INPUT_JSON_REPORT?')
         // INPUT_JSON_REPORT = fs.readFileSync(__dirname + "/../data/report-sample.json", 'utf8')
@@ -36,7 +37,7 @@ async function main() {
     handlebars.registerPartial('footer', fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    const distributionDir = path.join(__dirname, '../../../../', 'dist');
+    const distributionDir = path.join(__dirname, OUTPUT_HTML_REPORT_DIRECTORY);
     render(jsonReportInput, distributionDir);
 }
 

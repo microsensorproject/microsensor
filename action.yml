@@ -9,6 +9,10 @@ inputs:
   analysis_directory:
     description: 'The directory with the microservices to undergo the analysis.'
     required: true
+  output_report_directory:
+    description: 'The directory where the report will be created.'
+    required: true
+    default: docs/report
 
 outputs:
   json_report:
@@ -42,6 +46,7 @@ runs:
       shell: bash
       env:
         INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
+        OUTPUT_HTML_REPORT_DIRECTORY: ${{ steps.analysis.inputs.output_report_directory }}
       run: |
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
 
@@ -54,7 +59,5 @@ runs:
     - name: HTML Report Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
-        workspace: $GITHUB_ACTION_PATH
         branch: gh-pages
-        folder: dist
-
+        folder: ${{ steps.analysis.inputs.output_report_directory }}
