@@ -12,7 +12,7 @@ inputs:
   output_report_directory:
     description: 'The directory where the report will be created.'
     required: true
-    default: docs/report
+    default: $GITHUB_WORKSPACE/docs/report
 
 outputs:
   json_report:
@@ -43,7 +43,6 @@ runs:
       shell: bash
       env:
         INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
-        OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
 
