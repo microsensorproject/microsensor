@@ -31,15 +31,15 @@ async function main() {
     }
 
     const jsonReportInput = JSON.parse(INPUT_JSON_REPORT);
-    // console.log(INPUT_JSON_REPORT)
+    console.log(INPUT_JSON_REPORT)
 
     const partialsDir = path.join(__dirname, '..', 'partials');
     handlebars.registerPartial('footer',  fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    // const distributionDir = path.join(__dirname, '../../../../', 'dist');
     console.log("Generating report at.: " + OUTPUT_HTML_REPORT_DIRECTORY)
-    render(jsonReportInput, OUTPUT_HTML_REPORT_DIRECTORY);
+    const localDistributionDir = path.join(__dirname, '../../../../', 'dist');
+    render(jsonReportInput, OUTPUT_HTML_REPORT_DIRECTORY || localDistributionDir);
 }
 
 
