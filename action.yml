@@ -7,12 +7,8 @@ branding:
 
 inputs:
   analysis_directory:
-    description: 'The directory with the microservices to do analysis.'
+    description: 'The directory with the microservices to undergo the analysis.'
     required: true
-  action_absolute_path:
-    description: 'In case you change the action path during checkout.'
-    required: true
-    default: '.'
 
 outputs:
   json_report:
@@ -25,12 +21,12 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: It runs the analysis in the ${{ inputs.analysis_directory }}
-      id: analysis
+    - name: It builds the docker image with MSANose application.
+      id: build
       shell: bash
       run: |
-        echo "BUILD MSA Nose docker image. | ${{ inputs.action_absolute_path }}/MSANose.Dockerfile"
-        docker build -t msanose:$GITHUB_RUN_NUMBER -f ${{ inputs.action_absolute_path }}/MSANose.Dockerfile .
+        echo "BUILD MSA Nose docker image. | ${{ env.GITHUB_ACTION_PATH }}/MSANose.Dockerfile"
+        docker build -t msanose:$GITHUB_RUN_NUMBER -f ${{ env.GITHUB_ACTION_PATH }}/MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
         docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
