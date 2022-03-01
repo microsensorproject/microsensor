@@ -42,7 +42,7 @@ runs:
       env:
         INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
       run: |
-        cd ${{ inputs.action_absolute_path }}/src/scripts/renderer/js
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
 
         echo "Install HTML Report scripts dependencies."
         npm install
