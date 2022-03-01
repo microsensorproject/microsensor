@@ -46,7 +46,7 @@ runs:
       shell: bash
       env:
         INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
-        OUTPUT_HTML_REPORT_DIRECTORY: ${{ steps.analysis.inputs.output_report_directory }}
+        OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
 
@@ -60,4 +60,4 @@ runs:
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
         branch: gh-pages
-        folder: ${{ steps.analysis.inputs.output_report_directory }}
+        folder: ${{ inputs.output_report_directory }}

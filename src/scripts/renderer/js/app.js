@@ -34,11 +34,12 @@ async function main() {
     // console.log(INPUT_JSON_REPORT)
 
     const partialsDir = path.join(__dirname, '..', 'partials');
-    handlebars.registerPartial('footer', fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
+    handlebars.registerPartial('footer',  fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    const distributionDir = path.join(__dirname, OUTPUT_HTML_REPORT_DIRECTORY);
-    render(jsonReportInput, distributionDir);
+    // const distributionDir = path.join(__dirname, '../../../../', 'dist');
+    console.log("Generating report at.: " + OUTPUT_HTML_REPORT_DIRECTORY)
+    render(jsonReportInput, OUTPUT_HTML_REPORT_DIRECTORY);
 }
 
 
