@@ -46,7 +46,7 @@ runs:
       shell: bash
       env:
         INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
-        OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
+        OUTPUT_HTML_REPORT_DIRECTORY: $GITHUB_WORKSPACE/${{ inputs.output_report_directory }}
       run: |
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
 
