@@ -26,7 +26,8 @@ runs:
       shell: bash
       run: |
         echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/MSANose.Dockerfile"
-        docker build -t msanose:$GITHUB_RUN_NUMBER -f $GITHUB_ACTION_PATH/MSANose.Dockerfile .
+        cd $GITHUB_ACTION_PATH
+        docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
         docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
