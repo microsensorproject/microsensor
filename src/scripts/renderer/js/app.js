@@ -23,7 +23,7 @@ function render(dataInput, reportOutputDir) {
 }
 
 async function main() {
-    let OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('output_report_directory')
+    let OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY') ||  process.env.OUTPUT_HTML_REPORT_DIRECTORY
     let INPUT_JSON_REPORT = core.getInput('INPUT_JSON_REPORT') || process.env.INPUT_JSON_REPORT
     if ( typeof INPUT_JSON_REPORT !== 'string' ) {
         throw new Error('Invalid INPUT_JSON_REPORT: did you forget to set INPUT_JSON_REPORT?')
