@@ -24,3 +24,5 @@ hs_err_pid*
 /src/scripts/renderer/src/package-lock.json
 /src/scripts/renderer/js/node_modules/
 /src/scripts/renderer/js/package-lock.json
+
+/.idea/

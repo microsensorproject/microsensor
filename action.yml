@@ -1,6 +1,6 @@
-name: "Microservices Nose (e.g., MSANose) Action"
-description: "Run Java MSANose in a command line context via GitHub Actions."
-author: "Edson A. Soares"
+name: "Microservices Hypersensor (e.g., MSA Hypersensor) Action"
+description: "Run Java static analysis engines in a command line context via GitHub Actions."
+author: "Edson A. Soares <edson.araujo.soares@gmail.com>"
 branding:
   icon: 'check-circle'
   color: 'purple'
@@ -9,25 +9,27 @@ inputs:
   analysis_directory:
     description: 'The directory with the microservices to undergo the analysis.'
     required: true
-  output_report_directory:
-    description: 'The directory where the report will be created.'
-    required: true
-    default: docs/report
+    default: $GITHUB_WORKSPACE
 
-outputs:
-  json_report:
-    description: "The raw JSON analysis report."
-    value: ${{ steps.analysis.outputs.json_report }}
+  output_report_directory:
+    description: 'The directory where the final report will be created.'
+    required: true
+    default: dist/report
+
+#outputs:
+#  json_report:
+#    description: "The raw JSON analysis report."
+#    value: ${{ steps.analysis.outputs.json_report }}
 
 runs:
   using: "composite"
   steps:
-    - name: It builds the docker image with MSANose application.
+    - name: It builds the docker image with MSANose as engine.
       id: analysis
       shell: bash
       run: |
-        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/MSANose.Dockerfile"
-        cd $GITHUB_ACTION_PATH
+        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/engine/MSANose.Dockerfile"
+        cd $GITHUB_ACTION_PATH/engine
         docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
