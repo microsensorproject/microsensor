@@ -26,8 +26,6 @@ jobs:
       - name: Smells analysis test
         id: analysis
         uses: edson-a-soares/msa-hypersensor@development
-        with:
-          analysis_directory: $GITHUB_WORKSPACE
 
       # Collect the analysis output
       - name: Get the analysis raw json output (e.g., report)
