@@ -49,7 +49,7 @@ jobs:
       # Run the analysis on the specified directory
 #      - name: Smells analysis test
 #        id: analysis
-#        uses: edson-a-soares/msanose_action@development
+#        uses: edson-a-soares/msa-hypersensor@development
 #        with:
 #          analysis_directory:  $GITHUB_WORKSPACE
 #          action_absolute_path: $GITHUB_WORKSPACE/itself
