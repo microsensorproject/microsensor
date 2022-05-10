@@ -26,6 +26,6 @@ COPY start_msanose.sh /usr/local/msa-nose/start_msanose.sh
 RUN chmod u+x /usr/local/msa-nose/start_msanose.sh
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod u+x /usr/local/msa-nose/entrypoint
+RUN chmod u+x /usr/local/msa-nose/entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
