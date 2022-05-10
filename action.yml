@@ -28,8 +28,8 @@ runs:
       id: analysis
       shell: bash
       run: |
-        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/engine/MSANose.Dockerfile"
-        cd $GITHUB_ACTION_PATH/engine
+        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/src/scripts/engine/MSANose.Dockerfile"
+        cd $GITHUB_ACTION_PATH/src/scripts/engine
         docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
