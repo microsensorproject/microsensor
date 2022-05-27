@@ -24,22 +24,31 @@ function render(dataInput, reportOutputDir) {
 
 async function main() {
     let INPUT_JSON_REPORT = core.getInput('INPUT_JSON_REPORT') || process.env.INPUT_JSON_REPORT
-    let OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY') ||  process.env.OUTPUT_HTML_REPORT_DIRECTORY
-    if ( typeof INPUT_JSON_REPORT !== 'string' ) {
+    let OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY')
+        ||  process.env.OUTPUT_HTML_REPORT_DIRECTORY
+        || "dist/report"
+
+    if (typeof INPUT_JSON_REPORT !== 'string') {
         throw new Error('Invalid INPUT_JSON_REPORT: did you forget to set INPUT_JSON_REPORT?')
         // INPUT_JSON_REPORT = fs.readFileSync(__dirname + "/../data/report-sample.json", 'utf8')
     }
 
-    const jsonReportInput = JSON.parse(INPUT_JSON_REPORT);
+    let jsonReportInput = JSON.parse(INPUT_JSON_REPORT);
     console.debug(jsonReportInput)
+
+    handlebars.registerHelper("summary", function (items) {
+        const removables = [ "Bytecode Analysis", "Too Many Standards", "Wrong Cuts", "Microservice Greedy" ];
+        return Object.fromEntries(Object.entries(items)
+            .filter(([key, value]) => !removables.includes(key)));
+    })
 
     const partialsDir = path.join(__dirname, '..', 'partials');
     handlebars.registerPartial('footer',  fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    const distributionDir = path.join(process.env.GITHUB_WORKSPACE, OUTPUT_HTML_REPORT_DIRECTORY);
+    const distributionDir = path.join(process.env.GITHUB_WORKSPACE || path.join(__dirname, '../../../../'), OUTPUT_HTML_REPORT_DIRECTORY);
     console.debug("Generating report at.: " + distributionDir)
-    render(jsonReportInput, distributionDir || path.join(__dirname, '../../../../', 'dist'));
+    render(jsonReportInput, distributionDir);
 }
 
 

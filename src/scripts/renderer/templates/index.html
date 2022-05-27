@@ -18,7 +18,7 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
 
-    <title>MSANose Report</title>
+    <title>𝜇Sensor</title>
 </head>
 
 <body>
@@ -30,14 +30,14 @@
     <div class="container my-4">
         <div class="bd-intro">
             <div class="d-md-flex">
-                <h2 class="bd-title" id="content">Overview</h2>
+                <h2 class="bd-title" id="content">Summary</h2>
             </div>
         </div>
 
         <div class="border p-5 mb-5">
             <section>
                 <div class="row">
-                    <!--div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card">
                             <div class="card-body">
                                 <p class="text-uppercase small mb-2">
@@ -46,17 +46,18 @@
                                 <hr />
                                 <h5 class="mb-0">
                                     {{#if apigateway}}
-                                        <strong class="text-success ms-2">0</strong>
+                                        <!--div class="text-success ms-2">Yes</div-->
+                                    <img src="images/ok_success_icon.png">
                                     {{else}}
-                                        <strong class="text-danger ms-2">0</strong>
+                                        <!--div class="text-danger ms-2">No</div-->
+                                    <img src="images/blunder_failure_icon.png">
                                     {{/if}}
                                 </h5>
                             </div>
                         </div>
-                    </div-->
+                    </div>
 
-                    {{#each times}}
-                        <!--{{#isnt @key "API Gateway"}}-->
+                    {{#each (summary times) }}
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card">
                                 <div class="card-body">
@@ -70,11 +71,11 @@
                                         {{else}}
                                             <strong class="text-success ms-2">{{ this }}</strong>
                                         {{/if}}
+
                                     </h5>
                                 </div>
                             </div>
                         </div>
-                        <!--{{/isnt}}-->
                     {{/each}}
                 </div>
             </section>

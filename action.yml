@@ -1,4 +1,4 @@
-name: "Microservices Hypersensor (e.g., MSA Hypersensor) Action"
+name: "𝜇Sensor  (e.g., MicroSensor) Action"
 description: "Run Java static analysis engines in a command line context via GitHub Actions."
 author: "Edson A. Soares <edson.araujo.soares@gmail.com>"
 branding:
@@ -15,11 +15,6 @@ inputs:
     description: 'The directory where the final report will be created.'
     required: true
     default: dist/report
-
-#outputs:
-#  json_report:
-#    description: "The raw JSON analysis report."
-#    value: ${{ steps.analysis.outputs.json_report }}
 
 runs:
   using: "composite"
@@ -40,7 +35,7 @@ runs:
       with:
         node-version: '12.x'
 
-    - name: It builds the HTLM report for the analysis.
+    - name: It builds the HTML report for the analysis.
       id: report
       shell: bash
       env:

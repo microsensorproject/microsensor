@@ -8,28 +8,11 @@ jobs:
       - name: Run docker action and set output for testing
         uses: actions/checkout@v2
 
-      - name: List WORKDIR content
-        run: |
-          echo "pwd"
-          pwd
-
-          echo "ls -l"
-          ls -l
-
-          echo "ls -l $GITHUB_ACTION_PATH"
-          ls -l $GITHUB_ACTION_PATH
-
-          echo "ls -l $GITHUB_WORKSPACE"
-          ls -l $GITHUB_WORKSPACE
-
       # Run the analysis on the specified directory
       - name: Smells analysis test
         id: analysis
-        uses: edson-a-soares/msa-hypersensor@development
+        uses: edson-a-soares/microsensor@development
 
       # Collect the analysis output
       - name: Get the analysis raw json output (e.g., report)
         run: echo "${{ steps.analysis.outputs.json_report }}"
-
-      - name: Get the html output report
-        run: echo "${{ steps.analysis.outputs.html_report }}"
