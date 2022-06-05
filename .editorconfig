@@ -1,0 +1,29 @@
+# Top-most EditorConfig file
+#
+# When opening a file, EditorConfig plugins look for a file named .editorconfig in the directory
+# of the opened file and in every parent directory. A search for .editorconfig files will stop if
+# the root filepath is reached or an EditorConfig file with root=true is found.
+#
+# EditorConfig files are read top to bottom and the most recent rules found take precedence.
+root = true
+
+[*]
+
+# Unix-style newlines with a newline ending every file.
+end_of_line = lf
+insert_final_newline = true
+
+# Set default charset.
+charset = utf-8
+
+# Set default ident size.
+indent_size = 4
+indent_style = tab
+
+# Set to true to remove any whitespace characters preceding newline characters and false to ensure it doesn't.
+trim_trailing_whitespace = true
+
+# Matches any files either *.json, *.yml, .sh
+[{*.json, *.yml, *.sh}]
+indent_size = 2
+indent_style = space

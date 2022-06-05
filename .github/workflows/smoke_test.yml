@@ -3,13 +3,11 @@ on: [push]
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
-    name: A job to perform single repository checks
     steps:
       - name: Run docker action and set output for testing
         uses: actions/checkout@v2
 
-      # Run the analysis on the specified directory
-      - name: Smells analysis test
+      - name: Run Smells analysis test
         id: analysis
         uses: edson-a-soares/microsensor@development
 
