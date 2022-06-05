@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require('path');
+const mkdirp = require("mkdirp");
 const core = require('@actions/core')
 const handlebars = require('handlebars')
 const helpers = require('handlebars-helpers')();
@@ -16,6 +17,12 @@ function render(dataInput, reportOutputDir) {
 
         const reportPage = template(dataInput)
         const reportOutputPath = path.join(reportOutputDir, templateName);
+        console.debug("REPORT Output path.: " + reportOutputPath)
+
+		if (!fs.existsSync(reportOutputPath)) {
+			mkdirp(reportOutputPath);
+		}
+
         fs.writeFile(reportOutputPath, reportPage, function (err) {
             if (err) throw err;
         });
@@ -37,7 +44,7 @@ async function main() {
     console.debug(jsonReportInput)
 
     handlebars.registerHelper("summary", function (items) {
-        const removables = [ "Bytecode Analysis", "Too Many Standards", "Wrong Cuts", "Microservice Greedy" ];
+        const removables = [ "Bytecode Analysis", "Too Many Standards", "Wrong Cuts", "Microservice Greedy", "API Gateway" ];
         return Object.fromEntries(Object.entries(items)
             .filter(([key, value]) => !removables.includes(key)));
     })
