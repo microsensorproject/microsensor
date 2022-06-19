@@ -19,12 +19,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: It builds the docker image with MSANose as engine.
-      id: analysis
+    - name: It builds the docker image with MSANose as engines.
+      id: msanose
       shell: bash
       run: |
-        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/src/scripts/engine/MSANose.Dockerfile"
-        cd $GITHUB_ACTION_PATH/src/scripts/engine
+        echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/src/scripts/engines/msanose/MSANose.Dockerfile"
+        cd $GITHUB_ACTION_PATH/src/scripts/engines/msanose
         docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
@@ -39,7 +39,7 @@ runs:
       id: report
       shell: bash
       env:
-        INPUT_JSON_REPORT: ${{ steps.analysis.outputs.json_report }}
+        INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
