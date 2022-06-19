@@ -9,7 +9,7 @@ Please include a summary of the change and which issue is fixed. Please also inc
 <!--- If fixing a bug, there should be an issue describing it with steps to reproduce -->
 <!--- Please link to the issue here: -->
 
-Please, add link to the GitHub issue.
+Please, add a link to the GitHub issue.
 
 ### Motivation and Context
 

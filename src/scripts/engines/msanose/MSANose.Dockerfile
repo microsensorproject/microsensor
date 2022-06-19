@@ -8,7 +8,7 @@ RUN apt-get update -qq \
 	&& apt-get install -yq --no-install-recommends \
 		git
 
-RUN git clone https://github.com/edson-a-soares/msa-nose.git
+RUN git clone https://github.com/microsensorproject/msa-nose.git
 RUN cd msa-nose && mvn clean package
 
 FROM openjdk:11-jre-slim

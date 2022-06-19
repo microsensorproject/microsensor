@@ -12,9 +12,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Smells analysis test
-        id: analysis
-        uses: edson-a-soares/microsensor@development
+        id: static_analysis
+        uses: microsensorproject/microsensor@development
 
-      # Collect the analysis output
       - name: Get the analysis raw json output (e.g., report)
-        run: echo "${{ steps.analysis.outputs.json_report }}"
+        run: echo "${{ steps.static_analysis.outputs.json_report }}"
