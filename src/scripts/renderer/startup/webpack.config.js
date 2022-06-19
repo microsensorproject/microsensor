@@ -1,4 +1,6 @@
+const path = require('path');
 const { merge } = require("webpack-merge");
+const CopyPlugin = require("copy-webpack-plugin");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -23,6 +25,18 @@ module.exports = (webpackConfigEnv, argv) => {
           orgName,
         },
       }),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: path.join(__dirname, '../../../..', 'data'),
+					to: path.join(__dirname, '../../../..', 'dist')
+				},
+			],
+		}),
+
     ],
+	output : {
+		path: path.join(__dirname, '../../../..', 'dist')
+	}
   });
 };
