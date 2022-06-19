@@ -72,4 +72,4 @@ runs:
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
         branch: gh-pages
-        folder: $GITHUB_ACTION_PATH/dist
+        folder: ${{ inputs.output_report_directory }}

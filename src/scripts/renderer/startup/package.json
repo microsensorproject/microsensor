@@ -40,9 +40,11 @@
     "ts-config-single-spa": "^3.0.0"
   },
   "dependencies": {
+    "@actions/core": "^1.6.0",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "single-spa": "^5.9.3",
+    "process": "^0.11.10",
     "@types/webpack-env": "^1.16.2"
   },
   "types": "dist/microsensor-root-config.d.ts"
