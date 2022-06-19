@@ -19,7 +19,7 @@ inputs:
   output_report_directory:
     description: 'The directory where the final report will be created.'
     required: true
-    default: dist/report
+    default: dist
 
 runs:
   using: "composite"
