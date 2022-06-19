@@ -11,6 +11,11 @@ inputs:
     required: true
     default: $GITHUB_WORKSPACE
 
+  repository_url:
+    description: 'The repository URL.'
+    required: true
+    default: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+
   output_report_directory:
     description: 'The directory where the final report will be created.'
     required: true
@@ -34,6 +39,24 @@ runs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+
+    - name: It builds the MFEs.
+      id: mfes
+      shell: bash
+      env:
+        REPOSITORY_URL: ${{ inputs.repository_url }}
+        INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
+        OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
+      run: |
+        echo $REPOSITORY_URL
+
+        npm cache clean --force
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/startup && npm install && npm run build:webpack
+
+    - name: Copying the assets to the general dist directory.
+      shell: bash
+      run: |
+        $GITHUB_ACTION_PATH/scripts/bash/copy_assets.sh
 
     - name: It builds the HTML report for the analysis.
       id: report
