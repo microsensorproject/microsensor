@@ -1,7 +1,7 @@
 ### Description
 
  * **Problem**:
- * **Context of Use**: Describe when it happens or how use it
+ * **Context of Use**: Describe when it happens or how to use it
  * **Solution**: How it works in detail
 
 ## If it's a Bug
@@ -26,9 +26,9 @@ Please provide detailed steps for reproducing the issue.
 
 ### Summary
 
-*As a* [Persona: user concerned by the story]
-*I want to* [Behavior: goal of the story]
-*So that* [Reason for the story]
+**As a** [Persona: user concerned by the story]
+**I want to** [Behavior: the goal of the story]
+**So that** [Reason for the story]
 
 ### Acceptance Criteria
 
