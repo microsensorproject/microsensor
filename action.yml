@@ -48,6 +48,8 @@ runs:
         GITHUB_PAGES_ORIGIN: ${{ inputs.github_pages_origin }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
+        ls -l $GITHUB_REPOSITORY_OWNER
+        ls -l $GITHUB_REPOSITORY
         echo $GITHUB_PAGES_ORIGIN
 
         npm cache clean --force
