@@ -25,10 +25,10 @@ runs:
       run: |
         echo "BUILD MSA Nose docker image. | $GITHUB_ACTION_PATH/src/scripts/engines/msanose/MSANose.Dockerfile"
         cd $GITHUB_ACTION_PATH/src/scripts/engines/msanose
-        docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
+        # docker build -t msanose:$GITHUB_RUN_NUMBER -f MSANose.Dockerfile .
 
         echo "RUN MSA Nose docker container for the analysis."
-        docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
+        # docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
 
     - name: Set up NodeJS.
       uses: actions/setup-node@v1
