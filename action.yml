@@ -48,6 +48,9 @@ runs:
 
         npm cache clean --force
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/startup && npm install && npm run build:webpack
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/nav && npm install && npm run build:webpack
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/dashboard && npm install && npm run build:webpack
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/msanose && npm install && npm run build:webpack
 
     - name: It builds the HTML report for the analysis.
       id: report
