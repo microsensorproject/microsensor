@@ -11,11 +11,6 @@ inputs:
     required: true
     default: $GITHUB_WORKSPACE
 
-  github_pages_origin:
-    description: 'The GitHub Pages Repository URL.'
-    required: true
-    default: ${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY}
-
   output_report_directory:
     description: 'The directory where the final report will be created.'
     required: true
@@ -53,7 +48,7 @@ runs:
         echo $GITHUB_REPOSITORY_OWNER
         echo $GITHUB_PAGES_ORIGIN
 
-        echo "GITHUB_PAGES_ORIGIN=$(echo ${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME})" >> $GITHUB_ENV
+        echo "GITHUB_PAGES_ORIGIN=$(echo '$GITHUB_REPOSITORY_OWNER'.github.io'/$REPO_NAME')" >> $GITHUB_ENV
         echo $GITHUB_PAGES_ORIGIN
 
         npm cache clean --force
