@@ -41,7 +41,7 @@ runs:
       env:
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
         REPOSITORY_NAME: ${{ github.event.repository.name }}
-        REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER
+        REPOSITORY_OWNER: ${{ GITHUB_REPOSITORY_OWNER }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         echo $REPOSITORY_NAME
