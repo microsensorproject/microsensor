@@ -32,7 +32,8 @@ module.exports = (webpackConfigEnv, argv) => {
 		new GenerateJsonFile({
 			filename: 'data/report.json',
 			value: () => {
-				return INPUT_JSON_REPORT;
+				const report = JSON.stringify(INPUT_JSON_REPORT);
+				return JSON.parse(report);
 			}
 		})
 	],
