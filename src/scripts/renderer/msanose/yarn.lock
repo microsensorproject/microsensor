@@ -3484,6 +3484,11 @@
   "resolved" "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz"
   "version" "1.2.3"
 
+"generate-json-file-webpack-plugin@^0.0.2":
+  "integrity" "sha512-OA2FjbpQguQMx1tJNfSTJLKaik0arHUvv2+egv4A4lds+bZ54be0Xj270yRB1ABJTpgE1QRErbAr+HwjnVRf5g=="
+  "resolved" "https://registry.npmjs.org/generate-json-file-webpack-plugin/-/generate-json-file-webpack-plugin-0.0.2.tgz"
+  "version" "0.0.2"
+
 "gensync@^1.0.0-beta.2":
   "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
   "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"

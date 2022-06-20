@@ -15,15 +15,6 @@ function activeWhenPrefix(routes) {
 	};
 }
 
-// registerApplication({
-//   name: "@single-spa/welcome",
-//   app: () =>
-//     System.import(
-//       "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
-//     ),
-//   activeWhen: ["/"],
-// });
-
 registerApplication({
 	name: "@microsensor/dashboard",
 	app: () => System.import("@microsensor/dashboard"),

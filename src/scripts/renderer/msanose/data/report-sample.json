@@ -1,0 +1,173 @@
+{
+  "unversionedAPIContext":{
+    "unversionedAPIs":[
+      "",
+      "/securityConfigs",
+      "/payment",
+      "/welcome",
+      "/assurance/orderid/{orderId}",
+      "/prices/welcome",
+      "/contacts/{id}",
+      "/order/query",
+      "/contacts/account/{accountId}",
+      "/trainfoods/{tripId}",
+      "/{userName}",
+      "/adminbasic/contacts/{contactsId}",
+      "/id/{userId}",
+      "/assurances/{typeIndex}/{orderId}",
+      "/routes",
+      "/payment/money",
+      "/adminbasic/trains/{id}",
+      "/hello",
+      "/order/{travelDate}/{trainNumber}",
+      "/assurances/orderid/{orderId}",
+      "/foodstores/welcome",
+      "/assurances/assuranceid/{assuranceId}",
+      "/createOrderBatch",
+      "/adminbasic/trains",
+      "/securityConfigs/{id}",
+      "/orders/{orderId}",
+      "/test_send_mail",
+      "/foodstores",
+      "/cancel/refound/{orderId}",
+      "/orderOther/{travelDate}/{trainNumber}",
+      "/adminorder",
+      "/{userId}",
+      "/adminbasic/configs/{name}",
+      "/orderOther/query",
+      "/assurances/{assuranceId}/{orderId}/{typeIndex}",
+      "/adminbasic/configs",
+      "/adminbasic/prices",
+      "/orderOther/{orderId}",
+      "/trainfoods",
+      "/order/refresh",
+      "/execute/collected/{orderId}",
+      "/register",
+      "/contacts",
+      "/orderOther/admin",
+      "/login",
+      "/adminroute",
+      "/order/orderPay/{orderId}",
+      "/test_send_delivery",
+      "/order/{orderId}",
+      "/order/status/{orderId}/{status}",
+      "/foods/{date}/{startStation}/{endStation}/{tripId}",
+      "/trains/welcome",
+      "/routes/{startId}/{terminalId}",
+      "/orderOther/refresh",
+      "/trainfoods/welcome",
+      "/contacts/admin",
+      "/securityConfigs/{accountId}",
+      "/assurances",
+      "/orderOther/status/{orderId}/{status}",
+      "/contacts/welcome",
+      "/assurances/types",
+      "/routes/{routeId}",
+      "/generate",
+      "/admintravel",
+      "/order/security/{checkDate}/{accountId}",
+      "/orderOther",
+      "/adminbasic/stations",
+      "/test_send_mq",
+      "/orderOther/orderPay/{orderId}",
+      "/adminbasic/contacts",
+      "/contacts/{contactsId}",
+      "/order/price/{orderId}",
+      "/cancel/{orderId}/{loginId}",
+      "/orders",
+      "/order/admin",
+      "/execute/execute/{orderId}",
+      "/orderOther/price/{orderId}",
+      "/order",
+      "/foodstores/{stationId}",
+      "/orderOther/security/{checkDate}/{accountId}"
+    ],
+    "count":80
+  },
+  "hardCodedEndpointsContext":{
+    "hardcodedEndpoints":[
+
+    ],
+    "totalHardcodedEndpoints":0,
+    "totalHardcodedPorts":0,
+    "totalHardcodedIP":0
+  },
+  "esbContext":{
+    "candidateESBs":[
+
+    ]
+  },
+  "cyclicDependency":false,
+  "sharedPersistencyContext":{
+    "sharedPersistencies":[
+
+    ]
+  },
+  "sharedLibraryContext":{
+    "sharedLibraries":{
+      "org.services:ts-common":[
+        "Object"
+      ],
+      "org.springframework.boot:spring-boot-starter-amqp":[
+        "Object"
+      ],
+      "org.springframework.boot:spring-boot-starter-data-mongodb":[
+        "Object"
+      ],
+      "org.springframework.boot:spring-boot-starter-web":[
+        "Object"
+      ],
+      "io.jsonwebtoken:jjwt":[
+        "Object"
+      ]
+    }
+  },
+  "microservicesGreedyContext":{
+    "microserviceMetrics":[
+
+    ],
+    "greedyMicroservices":[
+
+    ]
+  },
+  "wrongCutsContext":{
+    "entityCounts":[
+
+    ],
+    "possibleWrongCuts":[
+
+    ]
+  },
+  "inappropriateServiceIntimacyContext":{
+    "sharedIntimacies":[
+
+    ],
+    "count":0
+  },
+  "tooManyStandardsContext":{
+    "presentationTypes":[
+      "STATIC"
+    ],
+    "businessTypes":[
+      "SPRING"
+    ],
+    "dataTypes":[
+
+    ]
+  },
+  "times":{
+    "Too Many Standards":126,
+    "Wrong Cuts":46,
+    "Bytecode Analysis":108,
+    "Shared Persistency":40,
+    "Shared Library":444,
+    "ESB":1,
+    "Microservice Greedy":2663,
+    "Unversioned API":5890,
+    "Hardcoded Enpoints":0,
+    "Cyclic Dependency":0,
+    "API Gateway":0,
+    "ISI":0
+  },
+  "apigateway":false
+}
