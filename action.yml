@@ -11,10 +11,10 @@ inputs:
     required: true
     default: $GITHUB_WORKSPACE
 
-  repository_url:
-    description: 'The repository URL.'
+  github_pages_origin:
+    description: 'The GitHub Pages Repository URL.'
     required: true
-    default: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+    default: $GITHUB_REPOSITORY_OWNER.github.io/$GITHUB_REPOSITORY
 
   output_report_directory:
     description: 'The directory where the final report will be created.'
@@ -44,12 +44,10 @@ runs:
       id: mfes
       shell: bash
       env:
-        REPOSITORY_URL: ${{ inputs.repository_url }}
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
+        GITHUB_PAGES_REPOSITORY_URL: ${{ inputs.github_pages_origin }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
-        echo $REPOSITORY_URL
-
         npm cache clean --force
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/startup && npm install && npm run build:webpack
 

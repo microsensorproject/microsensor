@@ -1,5 +1,5 @@
 {
   "imports": {
-    "@microsensor/root-config": "https://edson-a-soares.github.io/poc/assets/bootloader/microsensor-root-config.js"
+    "@microsensor/root-config": "$origin/microsensor-root-config.js"
   }
 }

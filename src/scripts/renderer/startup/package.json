@@ -37,6 +37,7 @@
     "eslint-config-ts-important-stuff": "^1.1.0",
     "typescript": "^4.3.5",
     "webpack-config-single-spa-ts": "^4.0.0",
+    "generate-json-file-webpack-plugin": "^0.0.2",
     "ts-config-single-spa": "^3.0.0"
   },
   "dependencies": {
