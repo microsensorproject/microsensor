@@ -7,8 +7,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 
 
-const ORIGIN = process.env.GITHUB_REPOSITORY_OWNER.concat(".github.io/").concat(process.env.REPOSITORY_NAME)
-	|| "http://localhost:9000";
+const ORIGIN = process.env.GITHUB_REPOSITORY_OWNER && process.env.REPOSITORY_NAME ?
+	"https://".concat(process.env.GITHUB_REPOSITORY_OWNER.concat(".github.io/").concat(process.env.REPOSITORY_NAME)) :
+	"http://localhost:9000";
 
 const OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY')
 	||  process.env.OUTPUT_HTML_REPORT_DIRECTORY
