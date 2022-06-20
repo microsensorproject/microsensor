@@ -1,5 +1,8 @@
 {
   "imports": {
-    "@microsensor/root-config": "$origin/microsensor-root-config.js"
+    "@microsensor/root-config": "$origin/microsensor-root-config.js",
+    "@microsensor/dashboard": "$origin/assets/dashboard/microsensor-dashboard.js",
+    "@microsensor/msanose": "$origin/assets/msanose/microsensor-msanose.js",
+    "@microsensor/nav": "$origin/assets/nav/microsensor-nav.js"
   }
 }
