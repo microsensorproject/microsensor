@@ -14,7 +14,7 @@ inputs:
   github_pages_origin:
     description: 'The GitHub Pages Repository URL.'
     required: true
-    default: ${{ format('{0}.{1}/{2}', '$GITHUB_REPOSITORY_OWNER', 'github.io', '$GITHUB_REPOSITORY') }}
+    default: ${{ format('{0}.{1}/{2}', ${GITHUB_REPOSITORY_OWNER}, 'github.io', ${GITHUB_REPOSITORY}) }}
 
   output_report_directory:
     description: 'The directory where the final report will be created.'
