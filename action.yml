@@ -41,11 +41,10 @@ runs:
       env:
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
         REPOSITORY_NAME: ${{ github.event.repository.name }}
-        REPOSITORY_OWNER: ${{ GITHUB_REPOSITORY_OWNER }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         echo $REPOSITORY_NAME
-        echo $REPOSITORY_OWNER
+        echo $GITHUB_REPOSITORY_OWNER
 
         npm cache clean --force
         cd $GITHUB_ACTION_PATH/src/scripts/renderer/startup && npm install && npm run build:webpack
