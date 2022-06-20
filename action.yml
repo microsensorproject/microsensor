@@ -45,11 +45,11 @@ runs:
       shell: bash
       env:
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
-        GITHUB_PAGES_ORIGIN: ${{ inputs.github_pages_origin }}
+        GITHUB_PAGES_ORIGIN: ${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
-        ls -l $GITHUB_REPOSITORY_OWNER
-        ls -l $GITHUB_REPOSITORY
+        echo $GITHUB_REPOSITORY_OWNER
+        echo $GITHUB_REPOSITORY
         echo $GITHUB_PAGES_ORIGIN
 
         npm cache clean --force
