@@ -47,7 +47,7 @@ runs:
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
         REPO_NAME: ${{ github.event.repository.name }}
         REPO_NAME_: ${{ github.repository }}
-        GITHUB_PAGES_ORIGIN: "$GITHUB_REPOSITORY_OWNER".github.io/"$GITHUB_REPOSITORY"
+        GITHUB_PAGES_ORIGIN: "$GITHUB_REPOSITORY_OWNER".github.io/$GITHUB_REPOSITORY
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
         echo $REPO_NAME
