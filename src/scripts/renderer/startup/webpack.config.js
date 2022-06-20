@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 
 
-const ORIGIN = core.getInput('GITHUB_PAGES_REPOSITORY_URL')
-	||  process.env.GITHUB_PAGES_REPOSITORY_URL
+const ORIGIN = core.getInput('GITHUB_PAGES_ORIGIN')
+	||  process.env.GITHUB_PAGES_ORIGIN
 	|| "http://localhost:9000";
 
 const OUTPUT_HTML_REPORT_DIRECTORY = core.getInput('OUTPUT_HTML_REPORT_DIRECTORY')
