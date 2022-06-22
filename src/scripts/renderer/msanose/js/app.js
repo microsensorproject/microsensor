@@ -67,8 +67,8 @@ function main() {
         || "dist/report"
 
     if (typeof INPUT_JSON_REPORT !== 'string') {
-        // throw new Error('Invalid INPUT_JSON_REPORT: did you forget to set INPUT_JSON_REPORT?')
-        INPUT_JSON_REPORT = fs.readFileSync(__dirname + "/../data/report-sample.json", 'utf8')
+        throw new Error('Invalid INPUT_JSON_REPORT: did you forget to set INPUT_JSON_REPORT?')
+        // INPUT_JSON_REPORT = fs.readFileSync(__dirname + "/../data/report-sample.json", 'utf8')
     }
 
     let jsonReportInput = JSON.parse(INPUT_JSON_REPORT);
