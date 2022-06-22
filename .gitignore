@@ -22,7 +22,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /src/scripts/renderer/src/package-lock.json
-/src/scripts/renderer/js/node_modules/
-/src/scripts/renderer/js/package-lock.json
+/src/scripts/renderer/msanose/js/node_modules/
+/src/scripts/renderer/msanose/js/package-lock.json
 
 /.idea/
