@@ -42,7 +42,7 @@ runs:
         INPUT_JSON_REPORT: ${{ steps.msanose.outputs.json_report }}
         OUTPUT_HTML_REPORT_DIRECTORY: ${{ inputs.output_report_directory }}
       run: |
-        cd $GITHUB_ACTION_PATH/src/scripts/renderer/js
+        cd $GITHUB_ACTION_PATH/src/scripts/renderer/msanose/js
 
         echo "Install HTML Report scripts dependencies."
         npm install

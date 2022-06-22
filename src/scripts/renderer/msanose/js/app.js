@@ -88,7 +88,7 @@ function main() {
     handlebars.registerPartial('footer',  fs.readFileSync(path.join(partialsDir, "footer.html"), 'utf8'))
     handlebars.registerPartial('menubar', fs.readFileSync(path.join(partialsDir, "menubar.html"), 'utf8'))
 
-    const distributionDir = path.join(process.env.GITHUB_WORKSPACE || path.join(__dirname, '../../../../'), OUTPUT_HTML_REPORT_DIRECTORY);
+    const distributionDir = path.join(process.env.GITHUB_WORKSPACE || path.join(__dirname, '../../../../../'), OUTPUT_HTML_REPORT_DIRECTORY);
 
 	try {
 		console.debug("Start report generation ...")
