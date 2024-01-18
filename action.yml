@@ -31,9 +31,9 @@ runs:
         docker run --rm -v $GITHUB_WORKSPACE:${{ inputs.analysis_directory }} msanose:$GITHUB_RUN_NUMBER $GITHUB_WORKSPACE
 
     - name: Set up NodeJS.
-      uses: actions/setup-node@v1
+      uses: actions/checkout@v4
       with:
-        node-version: '12.x'
+        node-version: '16.x'
 
     - name: It builds the HTML report for the analysis.
       id: report
